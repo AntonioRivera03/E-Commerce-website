@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel = 'stylesheet' href = 'postStyles.css' type = 'text/css'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class = "body">
+    <div class = "login">
+        <h1 style = 'margin-bottom: 10px; font-size: 50px;'>
+            Make a Post!
+        </h1>
+        <div class = "input-group">
+            <input class = "input" required type = "text" id = "Post Name">
+            <label class = "label" for = "Post Name">Post Name</label>
+        </div>
+        <div class = "input-group">
+            <input class = "input" required type = "text" id = "Photo Link">
+            <label class = "label" for = "Photo Link">Photo Link</label>
+        </div>
+        <div class = "input-group">
+            <input class = "input" style = "inline-size: 200px; overflow-wrap: break-word;" required type = "text" id = "Post Description">
+            <label class = "label" for = "Post Description">Post Description</label>
+        </div>
+        <button style = 'cursor: pointer'>
+            Post!
+        </button>
+        <br>
+        <a href = "browsePage.html">
+            <button style = 'cursor: pointer; background-color: rgb(177, 10, 10);'>
+                Cancel
+            </button>
+        </a>
+    </div>
+
+    <script>
+
+        function pushUser()
+        {
+            console.log("BUTTON PUSHED");
+            let username;
+            let password;
+            let email;
+            let phoneNum;
+        }
+
+    </script>
+    <?php
+        include('db.php')
+
+
+
+    ?>
+</body>
+</html>
