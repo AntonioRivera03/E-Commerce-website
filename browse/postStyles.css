@@ -1,7 +1,7 @@
 .login {
     
     width: 350px;
-    height: 550px;
+    height: 480px;
     padding-top: 25px;
     margin: auto;
     transform: translate(0, 30%);
@@ -39,25 +39,15 @@ body {
 button {
     width: 170px;
     height: 50px;
-    
+    margin-bottom: 15px;
     background-color: #00a105;
     color: white;
     font-size: 25px;
     font-weight: bold;
     border: 2px solid black;
-    
     box-shadow: 2px 2px black;
     border-radius: 10px;
 }
-
-button:active
-{
-    background-color: white;
-    color: #00a105;
-    box-shadow: 10px 10px rgb(186, 199, 0)k;
-
-}
-
 
 .input-group{
     font-size: 1.25rem;
@@ -76,6 +66,7 @@ input {
     border-radius: 10px;
     transition: 150ms
         cubic-bezier(0.4, 0, 0.2, 1);
+    
     
 }
 
@@ -100,11 +91,4 @@ input {
     
     padding-inline: 0.3rem;
     color: var(--primary);
-}
-
-.wrong
-{
-    color: rgb(150, 1, 1);
-    font-weight: bold;
-    margin-bottom: 10px;
 }

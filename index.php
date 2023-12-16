@@ -1,9 +1,11 @@
-<?php
-  include("db.php");
-?>
-
 <!DOCTYPE html>
+<link rel="icon" type="image/x-icon" href="image.png">
+
 <html lang="en">
+<SCRIPT SRC="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></SCRIPT>
+<script>
+  
+</script>
 
 <head>
   <meta charset="UTF- 8">
@@ -16,42 +18,101 @@
   <div class="topNav">
     <div class="left">
       <div id="navOption" class="selected"  style="cursor: pointer;"><a href="">Home</a></div>
-      <div id="navOption"  style="cursor: pointer;"><a href="">Browse</a></div>
+      <div id="navOption"  style="cursor: pointer;" onclick="window.location.href='/browse/browsePage.php'"><a >Browse</a></div>
     </div>
+    <div>
     <div class="right">
-    <div id="test"  style="cursor: pointer;"><a href="loginPage.php">Sign Up or Log In</a></div><div class="tits" id="pic"></div>
+    
+    <div   style="cursor: pointer;"><a id="test" href="loginPage.php">Sign Up or Log In</a></div><div id="pic" onclick="setHidden()"></div>
+    
     </div>
+    <br><br><div onclick="logout()" class="logout" hidden="hidden "id="logout">Log out</div>
+    
+    
     
   </div>
   <div class="center">
     <div class="bizz">U.Bizz</div>
-    <input type="text" class="search" placeholder="Start your buying experience here!">
-    
+    <input type="text" class="search" id="searching" placeholder="Start your buying experience here!"><button style="margin-left: 120px;" onclick="doSearch()">SEARCH</button>
   </div>
 
-  <?php
-    $loggedIn = True;
+
+  <script type="text/javascript">
+    check = false;
+    
+    if(document.cookie != "")
+    {
+      
+      grab = document.cookie;
+      ckies = grab.split("; ");
+      check = ckies[2].includes('true');    
+      
+      if (check == true)
+      {
+        data = grab.split(';');
+        picture = data[1];
+        document.getElementById("test").innerHTML = "";
+          let img = new Image();
+          let profPic = document.createElement("img");
+          profPic.src = picture.split('=')[1];
+          profPic.width = "50";
+          profPic.height = "50";
+          profPic.borderRadius = "100px"
+          document.getElementById("pic").appendChild(profPic);
+          
+      }  
+    }
+
+
+    function doSearch()
+    {
+      let input = document.getElementById('searching').value;
+
+      document.cookie = 'search='+input;
+
+      location.href = "/browse/browsePage.php";
+    }
     
 
-  ?>
-  <script type="text/javascript">
-    console.log("<?php Print($result); ?>")
-    const grab = "<?php Print($loggedIn);?>";
-    if (grab == 1)
-    {
-      document.getElementById("test").innerHTML = "";
-        let img = new Image();
-        let profPic = document.createElement("img");
-        profPic.src = "https://png.pngtree.com/background/20230522/original/pngtree-blue-abstract-wave-wallpaper-4k-picture-image_2689735.jpg";
-        profPic.width = "50";
-        profPic.height = "50";
-        profPic.borderRadius = "100px"
+   
+
+    function setHidden(){
+      let element = document.getElementById("logout");
+      let hidden = element.getAttribute("hidden");
+
+      if (hidden) {
+       element.removeAttribute("hidden");
        
+      } else {
+        element.setAttribute("hidden", "hidden");
         
-        document.getElementById("pic").appendChild(profPic);
-        
+      }
     }
+
+    function logout()
+    {
+      document.cookie = "userId=0";
+      document.cookie = "picture = ''";
+      document.cookie = "logged = false";
+      document.cookie = "search=''";
+      image = document.getElementById('pic');
+      image.remove('img');
+      document.getElementById("test").innerHTML = "Sign Up or Log In";
+
+      let element = document.getElementById("logout");
+      element.setAttribute("hidden", "hidden");
+    }
+
+    
   </script>
+  
+  <!--
+  <script>
+    console.log("GELLO");
+    document.getElementById("searching").onkeyup = function() {
+        console.log(this.value);
+    }
+  </script>-->
 
 </body>
 </html>

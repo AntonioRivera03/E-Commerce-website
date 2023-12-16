@@ -4,7 +4,7 @@
     }
     body
     {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: Calibri, 'Trebuchet MS', sans-serif;
         height: 100%;
         margin: 0;
 
@@ -13,8 +13,7 @@
     }
     /*topNav*/
     .topNav
-    {
-        
+    { 
         font-size: 25px;
         font-weight: bold;
         color: rgb(174, 174, 174);
@@ -105,4 +104,15 @@
         width:50px; 
         border-radius: 100%;
     }
-
+    .logout{
+        float: right; 
+        margin-right: 10px; 
+        background-color: #00C2FF; 
+        color: white; 
+        padding: 5px 10px; 
+        border-radius: 10px; 
+        box-shadow: 2px 2px black; 
+        border-color: black;
+        border-width: 2px;
+        cursor: pointer;
+    }
